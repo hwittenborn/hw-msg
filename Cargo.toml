@@ -1,0 +1,14 @@
+[package]
+name = "hw-msg"
+version = "0.1.0"
+authors = ["Hunter Wittenborn <hunter@hunterwittenborn.com>"]
+description = "Rust library for my style of CLI messaging"
+edition = "2021"
+repository = "https://github.com/hwittenborn/hw-msg"
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "hw_msg"
+
+[dependencies]
+colored = "2.0.0"
