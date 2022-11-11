@@ -30,6 +30,14 @@ macro_rules! info {
 }
 
 #[macro_export]
+macro_rules! infoln {
+    ($($arg:tt)*) => {
+        $crate::info!($($arg)*);
+        println!();
+    }
+}
+
+#[macro_export]
 macro_rules! warning {
     ($($arg:tt)*) => {
         print!("{} ", $crate::get_warning("Warning:"));
@@ -39,6 +47,13 @@ macro_rules! warning {
 }
 
 #[macro_export]
+macro_rules! warningln {
+    ($($arg:tt)*) => {
+        $crate::warning!($($arg)*);
+        println!();
+    }
+}
+#[macro_export]
 macro_rules! error {
     ($($arg:tt)*) => {
         print!("{} ", $crate::get_error("Error:"));
@@ -47,6 +62,13 @@ macro_rules! error {
     }
 }
 
+#[macro_export]
+macro_rules! errorln {
+    ($($arg:tt)*) => {
+        $crate::error!($($arg)*);
+        println!();
+    }
+}
 #[macro_export]
 macro_rules! question {
     ($($arg:tt)*) => {
