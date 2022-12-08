@@ -21,11 +21,37 @@ pub fn get_question<T: ToString>(string: T) -> ColoredString {
 }
 
 #[macro_export]
+macro_rules! infofmt {
+    ($($arg:tt)*) => {
+        format!("{} ", $crate::get_info("Info:")) + &format!($($arg)*)
+    }
+}
+
+#[macro_export]
+macro_rules! warningfmt {
+    ($($arg:tt)*) => {
+        format!("{} ", $crate::get_warning("Warning:")) + &format!($($arg)*)
+    }
+}
+
+#[macro_export]
+macro_rules! errorfmt {
+    ($($arg:tt)*) => {
+        format!("{} ", $crate::get_error("Error:")) + &format!($($arg)*)
+    }
+}
+
+#[macro_export]
+macro_rules! questionfmt {
+    ($($arg:tt)*) => {
+        format!("{} ", $crate::get_question("Question:")) + &format!($($arg)*)
+    }
+}
+
+#[macro_export]
 macro_rules! info {
     ($($arg:tt)*) => {
-        print!("{} ", $crate::get_info("Info:"));
-        print!($($arg)*);
-
+        println!("{}", $crate::info_fmt!($($arg)*));
     }
 }
 
@@ -40,9 +66,7 @@ macro_rules! infoln {
 #[macro_export]
 macro_rules! warning {
     ($($arg:tt)*) => {
-        print!("{} ", $crate::get_warning("Warning:"));
-        print!($($arg)*);
-
+        println!("{}", $crate::warning_fmt!($($arg)*));
     }
 }
 
@@ -56,8 +80,7 @@ macro_rules! warningln {
 #[macro_export]
 macro_rules! error {
     ($($arg:tt)*) => {
-        print!("{} ", $crate::get_error("Error:"));
-        print!($($arg)*);
+        println!("{}", $crate::error_fmt!($($arg)*));
 
     }
 }
@@ -72,8 +95,6 @@ macro_rules! errorln {
 #[macro_export]
 macro_rules! question {
     ($($arg:tt)*) => {
-        print!("{} ", $crate::get_question("Question:"));
-        print!($($arg)*);
-
+        println!("{}", $crate::question_fmt!($($arg)*));
     }
 }
