@@ -1,6 +1,6 @@
 [package]
 name = "hw-msg"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Hunter Wittenborn <hunter@hunterwittenborn.com>"]
 description = "Rust library for my style of CLI messaging"
 edition = "2021"

@@ -21,28 +21,28 @@ pub fn get_question<T: ToString>(string: T) -> ColoredString {
 }
 
 #[macro_export]
-macro_rules! infofmt {
+macro_rules! info_fmt {
     ($($arg:tt)*) => {
         format!("{} ", $crate::get_info("Info:")) + &format!($($arg)*)
     }
 }
 
 #[macro_export]
-macro_rules! warningfmt {
+macro_rules! warning_fmt {
     ($($arg:tt)*) => {
         format!("{} ", $crate::get_warning("Warning:")) + &format!($($arg)*)
     }
 }
 
 #[macro_export]
-macro_rules! errorfmt {
+macro_rules! error_fmt {
     ($($arg:tt)*) => {
         format!("{} ", $crate::get_error("Error:")) + &format!($($arg)*)
     }
 }
 
 #[macro_export]
-macro_rules! questionfmt {
+macro_rules! question_fmt {
     ($($arg:tt)*) => {
         format!("{} ", $crate::get_question("Question:")) + &format!($($arg)*)
     }
