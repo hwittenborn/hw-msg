@@ -51,7 +51,7 @@ macro_rules! question_fmt {
 #[macro_export]
 macro_rules! info {
     ($($arg:tt)*) => {
-        println!("{}", $crate::info_fmt!($($arg)*));
+        print!("{}", $crate::info_fmt!($($arg)*));
     }
 }
 
@@ -66,7 +66,7 @@ macro_rules! infoln {
 #[macro_export]
 macro_rules! warning {
     ($($arg:tt)*) => {
-        println!("{}", $crate::warning_fmt!($($arg)*));
+        print!("{}", $crate::warning_fmt!($($arg)*));
     }
 }
 
@@ -80,7 +80,7 @@ macro_rules! warningln {
 #[macro_export]
 macro_rules! error {
     ($($arg:tt)*) => {
-        println!("{}", $crate::error_fmt!($($arg)*));
+        print!("{}", $crate::error_fmt!($($arg)*));
 
     }
 }
@@ -95,6 +95,6 @@ macro_rules! errorln {
 #[macro_export]
 macro_rules! question {
     ($($arg:tt)*) => {
-        println!("{}", $crate::question_fmt!($($arg)*));
+        print!("{}", $crate::question_fmt!($($arg)*));
     }
 }
