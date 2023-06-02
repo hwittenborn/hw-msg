@@ -1,3 +1,4 @@
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! This crate provides macros for the style of CLI messages I like to use in my programs.
 //!
 //! The base macros are:
@@ -14,6 +15,7 @@ use colored::{ColoredString, Colorize};
 
 #[cfg(feature = "logging")]
 mod logging;
+#[cfg_attr(docsrs, doc(cfg(feature = "logging")))]
 #[cfg(feature = "logging")]
 pub use logging::HwLogger;
 
